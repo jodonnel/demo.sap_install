@@ -1,5 +1,5 @@
 ---
-# call playbook with # ansible-playbook example_in_one_file.yml
+# test merge... call playbook with # ansible-playbook example_in_one_file.yml
 - name: "Phase 03-C and 03-D -Setup HANA System Replication and Cluster on Azure"
   hosts: hanas
   become: true
