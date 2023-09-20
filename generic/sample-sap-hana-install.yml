@@ -5,5 +5,14 @@
   pre_tasks:
     - name: Include variables
       ansible.builtin.include_vars: ./vars/sample-variables-sap-hana-install.yml
-  roles:
-    - { role: ../roles/sap_hana_install }
+  # roles:
+  #  - { role: ../roles/sap_hana_install }
+  tasks:
+    # This step is already included in version 1.0.2. of the collection
+    # name: Detect Existing HANA installation
+    #  include_tasks: check_for_sap_instances.yml
+
+    - name: execute the SAP Hana Installation
+      include_role:
+        name: community.sap_install.sap_hana_install
+    # when: not sap_hana_deployment_skip
